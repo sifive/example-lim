@@ -4,8 +4,8 @@
 /*
  *  Example code to demonstrate usage of LIM.
  */
-#include <metal/drivers/sifive_ccache0.h>
 #include <metal/lim.h>
+#include <metal/platform.h>
 #include <stdio.h>
 
 #ifdef METAL_SIFIVE_CCACHE0
@@ -25,9 +25,6 @@ __attribute__((noinline)) METAL_PLACE_IN_LIM int run_in_lim(int x) {
 }
 
 int main(void) {
-  /* Initialize L2 cache */
-  sifive_ccache0_init();
-
   PRINT("***LIM function demo***\n");
 
   int x = 2;
